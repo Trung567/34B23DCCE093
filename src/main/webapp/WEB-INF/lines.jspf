@@ -1,0 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<div class="table-wrap"><table><thead><tr><th scope="col">TT</th><th scope="col">Mã sản phẩm</th><th scope="col">Tên sản phẩm</th><th scope="col">Đơn vị tính</th><th scope="col">Số lượng</th><th scope="col">Đơn giá (VNĐ)</th><th scope="col">Thành tiền (VNĐ)</th></tr></thead><tbody>
+<% for(int lineIndex=0;lineIndex<order.getOrderLines().length;lineIndex++) { OrderLine3 line=order.getOrderLines()[lineIndex]; %>
+<tr><td class="center"><%=lineIndex+1%></td><td><%=Ui.h(line.getProduct().getProductCode())%></td><td><%=Ui.h(line.getProduct().getProductName())%></td><td class="center"><%=Ui.h(line.getProduct().getUnitOfMeasure())%></td><td class="number"><%=line.getQuantity()%></td><td class="number"><%=Ui.money(line.getUnitPrice())%></td><td class="number"><%=Ui.money(line.getLineTotal())%></td></tr>
+<% } %></tbody></table></div><p class="total">Tổng tiền: <%=Ui.money(order.getTotalAmount())%> VNĐ</p>

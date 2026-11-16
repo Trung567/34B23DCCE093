@@ -1,0 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<form class="logout-form no-print" method="post" action="logout">
+  <input type="hidden" name="csrf" value="<%=Ui.h(session.getAttribute("csrf"))%>">
+  <button class="text-button" type="submit">Đăng xuất</button>
+</form>
